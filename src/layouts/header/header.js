@@ -4,7 +4,7 @@ import logo from '../../assets/img/logo.png'
 
 function Header() {
   return (
-    <div className='container header'>
+    <header className='container header'>
         <nav class="navbar navbar-inverse head">
             <div class="container">
                 <div class="navbar-header">
@@ -30,7 +30,7 @@ function Header() {
                 <a href="#" className="navbar-text">Emtia</a>
             </div>
         </nav>
-    </div>
+    </header>
   );
 }
 
