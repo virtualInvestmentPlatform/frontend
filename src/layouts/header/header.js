@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 import './header.css'
 import logo from '../../assets/img/logo.png'
 
@@ -21,13 +22,13 @@ function Header() {
         </nav>
         <nav class="navbar navbar-dark menu">
             <div className="menu-items">
-                <a href="#" className="navbar-text">Ana Sayfa</a>
+                <Link to="/" className="navbar-text">Ana Sayfa</Link>
                 <span className="divider">|</span>
-                <a href="#" className="navbar-text">Borsa</a>
+                <Link to="borsa" className="navbar-text">Borsa</Link>
                 <span className="divider">|</span>
-                <a href="#" className="navbar-text">Döviz</a>
+                <Link to="/doviz" className="navbar-text">Döviz</Link>
                 <span className="divider">|</span>
-                <a href="#" className="navbar-text">Emtia</a>
+                <Link to="/emtia" className="navbar-text">Emtia</Link>
             </div>
         </nav>
     </header>
