@@ -14,9 +14,13 @@ function Header() {
                     </a>
                 </div>
                 <ul class="nav navbar-right">
-                    <li className='mx-2'><a href="#" className='text-decoration-none text-light'>Giriş</a></li>
+                    <li className='mx-2'>
+                        <Link to="/login" className="text-decoration-none text-light">Giriş</Link>
+                    </li>
                     <span className="divider">|</span>
-                    <li className='mx-2'><a href="#" className='text-decoration-none text-light'>Kaydol</a></li>
+                    <li className='mx-2'>
+                        <Link to="/register" className="text-decoration-none text-light">Kaydol</Link>
+                    </li>
                 </ul>
             </div>
         </nav>
@@ -24,11 +28,11 @@ function Header() {
             <div className="menu-items">
                 <Link to="/" className="navbar-text">Ana Sayfa</Link>
                 <span className="divider">|</span>
-                <Link to="borsa" className="navbar-text">Borsa</Link>
+                <Link to="stock" className="navbar-text">Borsa</Link>
                 <span className="divider">|</span>
-                <Link to="/doviz" className="navbar-text">Döviz</Link>
+                <Link to="/exchange" className="navbar-text">Döviz</Link>
                 <span className="divider">|</span>
-                <Link to="/emtia" className="navbar-text">Emtia</Link>
+                <Link to="/commodity" className="navbar-text">Emtia</Link>
             </div>
         </nav>
     </header>
