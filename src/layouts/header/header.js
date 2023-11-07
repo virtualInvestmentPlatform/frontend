@@ -1,24 +1,36 @@
 import React from 'react';
+import './header.css'
+import logo from '../../assets/img/logo.png'
 
 function Header() {
   return (
-    <header className="navbar navbar-expand-lg navbar-dark bg-dark">
-      <div className="container">
-        <a href="/" className="navbar-brand">
-          <img src="logo.png" alt="Logo" className="header-logo" />
-        </a>
-        <div className="" id="navbarNav">
-          <ul className="navbar-nav ml-auto">
-            <li className="nav-item">
-              <a href="/login" className="nav-link">Giriş</a>
-            </li>
-            <li className="nav-item">
-              <a href="/register" className="nav-link">Kayıt Ol</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </header>
+    <div className='container header'>
+        <nav class="navbar navbar-inverse head">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">
+                        <img class="app-logo" src={logo}/>
+                    </a>
+                </div>
+                <ul class="nav navbar-right">
+                    <li className='mx-2'><a href="#" className='text-decoration-none text-light'>Giriş</a></li>
+                    <span className="divider">|</span>
+                    <li className='mx-2'><a href="#" className='text-decoration-none text-light'>Kaydol</a></li>
+                </ul>
+            </div>
+        </nav>
+        <nav class="navbar navbar-dark menu">
+            <div className="menu-items">
+                <a href="#" className="navbar-text">Ana Sayfa</a>
+                <span className="divider">|</span>
+                <a href="#" className="navbar-text">Borsa</a>
+                <span className="divider">|</span>
+                <a href="#" className="navbar-text">Döviz</a>
+                <span className="divider">|</span>
+                <a href="#" className="navbar-text">Emtia</a>
+            </div>
+        </nav>
+    </div>
   );
 }
 

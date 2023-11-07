@@ -1,0 +1,40 @@
+
+.head {
+    max-height: 100px;
+}
+
+.head .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.app-logo {
+    max-width: auto;
+    max-height: 80px;
+}
+
+.menu {
+    background-color: rgba(74,85,113,0.13);
+    display: flex;
+    justify-content: center;
+    height: 50px;
+    border-radius: 10px;
+}
+
+.menu-items a.navbar-text {
+    margin: 0 10px;
+    color: white;
+    text-decoration: none;
+    font-size: large;
+}
+
+.menu-items a.navbar-text:visited {
+    color: white;
+}
+  
+.divider {
+    margin: 0 5px;
+    color: #fff;
+}
+

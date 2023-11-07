@@ -6,7 +6,7 @@ function App() {
   return (
     <div>
       <Header></Header>
-      <div style={{height: 800}}></div>
+      <div style={{height: 700}}></div>
       <Footer></Footer>
     </div>
   );
