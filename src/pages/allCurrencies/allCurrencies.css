@@ -1,0 +1,15 @@
+.currency-header {
+    max-width: none;
+    text-align: center;
+    background-color: transparent;
+    padding-top: 0.1rem;
+    padding-bottom: 0.1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin-bottom: 0.7rem;
+    border-radius: 12px;
+}
+
+.currency-header .card-body {
+    padding-bottom: 0px;
+}

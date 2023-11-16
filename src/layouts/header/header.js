@@ -30,7 +30,7 @@ function Header() {
                 <span className="divider">|</span>
                 <Link to="stock" className="navbar-text">Borsa</Link>
                 <span className="divider">|</span>
-                <Link to="/exchange" className="navbar-text">Döviz</Link>
+                <Link to="/currency" className="navbar-text">Döviz</Link>
                 <span className="divider">|</span>
                 <Link to="/commodity" className="navbar-text">Emtia</Link>
             </div>

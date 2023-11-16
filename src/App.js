@@ -6,6 +6,7 @@ import Home from './pages/home/home'
 import Login from './pages/login/login';
 import Register from './pages/register/register';
 import ForgotPassword from './pages/forgotPassword/forgotPassword';
+import AllCurrencies from './pages/allCurrencies/allCurrencies';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
               <Route path="/login" element={<Login/>} />
               <Route path="/register" element={<Register/>} />
               <Route path="/forgotPassword" element={<ForgotPassword/>} />
+              <Route path="/currency" element={<AllCurrencies/>} />
             </Routes>
           <Footer/>
         </div>
