@@ -1,6 +1,5 @@
 import React from 'react';
 import './allCurrencies.css'
-import '../../components/currencyRow/currencyRow'
 import CurrencyRow from '../../components/currencyRow/currencyRow';
 
 

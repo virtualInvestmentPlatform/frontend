@@ -28,7 +28,7 @@ function Header() {
             <div className="menu-items">
                 <Link to="/" className="navbar-text">Ana Sayfa</Link>
                 <span className="divider">|</span>
-                <Link to="stock" className="navbar-text">Borsa</Link>
+                <Link to="/stock" className="navbar-text">Borsa</Link>
                 <span className="divider">|</span>
                 <Link to="/currency" className="navbar-text">Döviz</Link>
                 <span className="divider">|</span>

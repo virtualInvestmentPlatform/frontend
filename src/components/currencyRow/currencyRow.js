@@ -1,6 +1,5 @@
 import React from 'react';
 import './currencyRow.css';
-import logo from '../../assets/img/logo.png'
 import up from '../../assets/img/up.png'
 import down from '../../assets/img/down.png'
 import stable from '../../assets/img/stable.png'

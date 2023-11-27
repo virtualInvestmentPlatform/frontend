@@ -7,6 +7,8 @@ import Login from './pages/login/login';
 import Register from './pages/register/register';
 import ForgotPassword from './pages/forgotPassword/forgotPassword';
 import AllCurrencies from './pages/allCurrencies/allCurrencies';
+import AllStocks from './pages/allStocks/allStocks';
+import AllCommodity from './pages/allCommodity/allCommodity';
 
 function App() {
   return (
@@ -18,7 +20,9 @@ function App() {
               <Route path="/login" element={<Login/>} />
               <Route path="/register" element={<Register/>} />
               <Route path="/forgotPassword" element={<ForgotPassword/>} />
+              <Route path="/stock" element={<AllStocks/>} />
               <Route path="/currency" element={<AllCurrencies/>} />
+              <Route path="/commodity" element={<AllCommodity/>} />
             </Routes>
           <Footer/>
         </div>
