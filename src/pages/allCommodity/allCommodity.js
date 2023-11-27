@@ -1,6 +1,5 @@
 import React from 'react';
 import './allCommodity.css'
-import CurrencyRow from '../../components/commodityRow/commodityRow';
 import CommodityRow from '../../components/commodityRow/commodityRow';
 
 

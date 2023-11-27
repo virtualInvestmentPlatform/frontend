@@ -1,0 +1,13 @@
+.container {
+    text-align: center;
+    background-color: transparent;
+    border-radius: 12px;
+}
+
+.left {
+    align-self: center;
+}
+
+.right {
+    text-align: start;
+}
