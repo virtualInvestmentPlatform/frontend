@@ -1,0 +1,87 @@
+.currency-container {
+    text-align: center;
+    background-color: transparent;
+    border-radius: 12px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.left {
+    align-self: center;
+}
+
+.right {
+    text-align: start;
+}
+
+.currency-title {
+    justify-content: center;
+    place-content: space-evenly;
+}
+
+.currency-price {
+    padding-top: 5px;
+    justify-content: center;
+}
+
+.currency-title .currency-name {
+    text-align: right;
+    padding-right: 0px;
+}
+
+.currency-title .currency-code {
+    text-align: left;
+    font-weight: 100;
+    color: gray;
+}
+
+.currency-price .number {
+    text-align: right;
+    padding-right: 0px;
+    font-size:xx-large;
+}
+
+.currency-price .indicator {
+    text-align: left;
+    font-size: large;
+    font-size:xx-large;
+    padding-left: 5px;
+}
+
+.own-title {
+    text-align: left;   
+}
+
+.own-title p {
+    padding-left: 0px;
+}
+
+.buy-section p{
+    margin: 0px;
+    text-align: left;
+}
+
+.buy-section btn {
+    background-color: green;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sell-section {
+    margin-top: 10px;
+}
+
+.sell-section p{
+    margin: 0px;
+    text-align: left;
+}
+
+.sell-section btn{
+    background-color: red;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

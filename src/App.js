@@ -12,6 +12,7 @@ import AllCommodity from './pages/allCommodity/allCommodity';
 import Currency from './pages/currency/currency'
 import Stock from './pages/stock/stock'
 import Commodity from './pages/commodity/commodity'
+import MyInvestments from './pages/myInvestments/myInvestments';
 
 function App() {
   return (
@@ -22,13 +23,14 @@ function App() {
               <Route path="/" element={<Home/>} />
               <Route path="/login" element={<Login/>} />
               <Route path="/register" element={<Register/>} />
-              <Route path="/forgotPassword" element={<ForgotPassword/>} />
+              <Route path="/forgot-password" element={<ForgotPassword/>} />
               <Route path="/stock" element={<AllStocks/>} />
               <Route path="/currency" element={<AllCurrencies/>} />
               <Route path="/commodity" element={<AllCommodity/>} />
               <Route path="/currency/:currencyName" element={<Currency/>} />
               <Route path="/stock/:stockName" element={<Stock/>} />
               <Route path="/commodity/:commodityName" element={<Commodity/>} />
+              <Route path="/my-investments" element={<MyInvestments/>} />
             </Routes>
           <Footer/>
         </div>

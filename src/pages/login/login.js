@@ -18,7 +18,7 @@ function Login() {
 
             <div className='flex-container forgot-password-wrapper'>
                 <div className="text-right form-element">
-                    <Link to="/forgotPassword">Şifremi Unuttum</Link>
+                    <Link to="/forgot-password">Şifremi Unuttum</Link>
                 </div>
             </div>
             
