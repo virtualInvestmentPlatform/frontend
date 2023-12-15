@@ -44,3 +44,20 @@
     display: contents;
 }
 
+.user-panel {
+    color: white;
+    font-size: large;
+}
+
+.user-navigation {
+    text-align: end;
+}
+
+.user-panel .btn-link {
+    color: white;
+    text-decoration: none;
+    padding-right: 0px;
+    padding-left: 5px;
+    font-weight: 200;
+}
+
