@@ -38,3 +38,16 @@ a:visited {
     display: flex;
     justify-content: flex-end; 
 }
+
+.alert {
+    width: fit-content;
+    margin: 0 auto;
+  }
+  
+  .alert-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    height: 10vh; 
+    text-align: center;
+  }

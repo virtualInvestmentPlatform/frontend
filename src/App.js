@@ -13,28 +13,31 @@ import Currency from './pages/currency/currency'
 import Stock from './pages/stock/stock'
 import Commodity from './pages/commodity/commodity'
 import MyInvestments from './pages/myInvestments/myInvestments';
+import { AuthProvider } from './context/authContext';
 
 function App() {
   return (
-    <BrowserRouter>
-        <div>
-          <Header/>
-            <Routes>
-              <Route path="/" element={<Home/>} />
-              <Route path="/login" element={<Login/>} />
-              <Route path="/register" element={<Register/>} />
-              <Route path="/forgot-password" element={<ForgotPassword/>} />
-              <Route path="/stock" element={<AllStocks/>} />
-              <Route path="/currency" element={<AllCurrencies/>} />
-              <Route path="/commodity" element={<AllCommodity/>} />
-              <Route path="/currency/:currencyName" element={<Currency/>} />
-              <Route path="/stock/:stockName" element={<Stock/>} />
-              <Route path="/commodity/:commodityName" element={<Commodity/>} />
-              <Route path="/my-investments" element={<MyInvestments/>} />
-            </Routes>
-          <Footer/>
-        </div>
-    </BrowserRouter>
+    <AuthProvider>
+      <BrowserRouter>
+          <div>
+            <Header/>
+              <Routes>
+                <Route path="/" element={<Home/>} />
+                <Route path="/login" element={<Login/>} />
+                <Route path="/register" element={<Register/>} />
+                <Route path="/forgot-password" element={<ForgotPassword/>} />
+                <Route path="/stock" element={<AllStocks/>} />
+                <Route path="/currency" element={<AllCurrencies/>} />
+                <Route path="/commodity" element={<AllCommodity/>} />
+                <Route path="/currency/:currencyName" element={<Currency/>} />
+                <Route path="/stock/:stockName" element={<Stock/>} />
+                <Route path="/commodity/:commodityName" element={<Commodity/>} />
+                <Route path="/my-investments" element={<MyInvestments/>} />
+              </Routes>
+            <Footer/>
+          </div>
+      </BrowserRouter>
+    </AuthProvider>
   );
 }
 

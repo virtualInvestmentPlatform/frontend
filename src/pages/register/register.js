@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './register.css';
 import { Link } from 'react-router-dom';
-import registerUser from '../../service/auth';
+import {registerUser} from '../../service/auth';
 
 function Register() {
   const [name, setName] = useState('');
@@ -13,13 +13,11 @@ function Register() {
 
   const handleRegister = async (e) => {
     e.preventDefault(); 
-
-    try {
-      await registerUser(name, surname, email, password);
-      // Registration was successful
+    
+    const response = await registerUser(name, surname, email, password);
+    if (response != null && response && response.status === 200) {
       setRegistrationStatus('Başarıyla kayıt olundu!');
-    } catch (error) {
-      // Registration failed
+    } else {
       setRegistrationStatus('Kayıt olurken bir sorun oldu. Lütfen tekrar deneyiniz.');
     }
   };
