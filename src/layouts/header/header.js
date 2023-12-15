@@ -1,11 +1,18 @@
 import React from 'react';
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from 'react-router-dom';
 import './header.css'
 import logo from '../../assets/img/logo.png'
 import { useAuth } from '../../context/authContext';
 
 function Header() {
-    const {token} = useAuth();
+    const {token , logout} = useAuth();
+    const navigate = useNavigate();
+
+    const handleLogout = () => {
+        logout();
+        navigate("/");
+    };
+
     return (
         <header className='container header'>
             <nav class="navbar navbar-inverse head">
@@ -17,12 +24,12 @@ function Header() {
                     </div>
                     {
                     (token) 
-                    ? 
+                    ?
                     <div className="user-panel text-center">
                         <span className="name">Harun Eren Özkaya</span>
                         <nav className="user-navigation">
                             <Link to="/settings" className="btn btn-link">Ayarlar</Link> |
-                            <Link to="/logout" className="btn btn-link">Çıkış</Link>
+                            <button onClick={handleLogout} className="btn btn-link">Çıkış</button>
                         </nav>
                     </div>
                     :

@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from 'react';
+import React, { createContext, useContext, useState, useEffect } from 'react';
 
 const AuthContext = createContext();
 
@@ -7,7 +7,18 @@ export function useAuth() {
 }
 
 export function AuthProvider({ children }) {
-  const [token, setToken] = useState(null);
+  const [token, setToken] = useState(() => {
+    return sessionStorage.getItem('userToken');
+  });
+
+
+  useEffect(() => {
+    if (token) {
+      sessionStorage.setItem('userToken', token);
+    } else {
+      sessionStorage.removeItem('userToken');
+    }
+  }, [token]);
 
   const login = (jwtToken) => {
     setToken(jwtToken);
