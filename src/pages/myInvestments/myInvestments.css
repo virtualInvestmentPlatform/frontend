@@ -13,3 +13,13 @@
 .stock-header .card-body {
     padding-bottom: 0px;
 }
+
+.my-investment-wrapper {
+    padding: 1rem;
+    border-radius: 12px;
+    background-color: rgba(74, 85, 113, 0.14);
+}
+
+.investment-title {
+    color: white;
+}
