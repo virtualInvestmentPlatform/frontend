@@ -1,9 +1,22 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './allCommodity.css'
 import CommodityRow from '../../components/commodityRow/commodityRow';
+import { getAllCommodities } from '../../service/commodity'; 
 
 
 function AllCommodity() {
+    const [commodities, setCommodities] = useState([]);
+
+    useEffect(() => {
+        const fetchData = async () => {
+            const response = await getAllCommodities();
+            if (response && response.data) {
+                setCommodities(response.data);
+            }
+        };
+        fetchData();
+    }, []);
+
     return (
         <div className='container'>
             <div className='col'>
@@ -21,15 +34,17 @@ function AllCommodity() {
                 </div>
             </div>
 
-            <CommodityRow name={"Gold"} sellPrice={14} buyPrice={14.3} percentageChange={3} time={'12:34:12'}/>
-            <CommodityRow name={"Gold"} sellPrice={14} buyPrice={14.3} percentageChange={-3} time={'12:34:12'}/>
-            <CommodityRow name={"Gold"} sellPrice={14} buyPrice={14.3} percentageChange={3} time={'12:34:12'}/>
-            <CommodityRow name={"Gold"} sellPrice={14} buyPrice={14.3} percentageChange={-2} time={'12:34:12'}/>
-            <CommodityRow name={"Gold"} sellPrice={14} buyPrice={14.3} percentageChange={3} time={'12:34:12'}/>
-            <CommodityRow name={"Gold"} sellPrice={14} buyPrice={14.3} percentageChange={3} time={'12:34:12'}/>
-            <CommodityRow name={"Gold"} sellPrice={14} buyPrice={14.3} percentageChange={-1} time={'12:34:12'}/>
-            <CommodityRow name={"Gold"} sellPrice={14} buyPrice={14.3} percentageChange={3} time={'12:34:12'}/>
-            <CommodityRow name={"Gold"} sellPrice={14} buyPrice={14.3} percentageChange={3} time={'12:34:12'}/>
+            {commodities.map(commodity => (
+                    <CommodityRow 
+                        key={commodity.name}
+                        name={commodity.name} 
+                        selling={commodity.selling} 
+                        buying={commodity.buying}
+                        rate={commodity.rate} 
+                        time={commodity.time}
+                    />
+                ))
+            }
             </div>
         </div>
       );
