@@ -22,9 +22,8 @@ function Login() {
         login(userData);
         
         //Redirect to investments
-        setTimeout(() => {
-          navigate("/my-investments");
-        }, 1500);
+        navigate("/my-investments");
+      
 
       } else {
         setLoginStatus('Email veya şifre hatalı!');

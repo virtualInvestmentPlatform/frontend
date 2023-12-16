@@ -15,7 +15,10 @@ function Header() {
             getUser(token).then(response => {
                 if(response) {
                     setUser(response.data);
+                    console.log(response.data);
+                    console.log(response);
                 }
+                console.log(response);
             });
         }
     }, [token]);
@@ -38,7 +41,9 @@ function Header() {
                     (token) 
                     ?   
                     <div className="user-panel text-center">
-                        <span className="name">{user.name} {user.surname}</span>
+                        <span className="name">{user == null ? "" : user.name} {user == null ? "" : user.surname}</span>
+                        <br/>
+                        <span className="balance">{user == null ? "" : "Bakiye : " + user.balance} TL</span>
                         <nav className="user-navigation">
                             <Link to="/settings" className="btn btn-link">Ayarlar</Link> |
                             <button onClick={handleLogout} className="btn btn-link">Çıkış</button>
@@ -81,3 +86,7 @@ function Header() {
 }
 
 export default Header;
+
+/*
+<span className="name">{user.name} {user.surname}</span>
+                        <span className="balance">{user.balance} TL</span>*/

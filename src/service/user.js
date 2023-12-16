@@ -9,6 +9,7 @@ const getUser = async (token) => {
   };
   try {
     const response = await axios.get(USER_PATH, config);
+    console.log(response);
     return response;
   } catch (error) {
     return null;

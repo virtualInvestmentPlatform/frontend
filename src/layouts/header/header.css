@@ -47,6 +47,7 @@
 .user-panel {
     color: white;
     font-size: large;
+    text-align: end!important;
 }
 
 .user-navigation {
@@ -58,6 +59,12 @@
     text-decoration: none;
     padding-right: 0px;
     padding-left: 5px;
+    padding-top: 0px;
     font-weight: 200;
+    font-size: 15px;
+}
+
+.user-panel .balance {
+    font-size: 15px;
 }
 
