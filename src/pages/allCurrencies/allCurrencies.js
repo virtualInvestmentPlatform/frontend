@@ -1,9 +1,22 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './allCurrencies.css'
 import CurrencyRow from '../../components/currencyRow/currencyRow';
+import { getAllCurrencies } from '../../service/currency'; 
 
 
 function AllCurrencies() {
+    const [currencies, setCurrencies] = useState([]);
+
+    useEffect(() => {
+        const fetchData = async () => {
+            const response = await getAllCurrencies();
+            if (response && response.data) {
+                setCurrencies(response.data);
+            }
+        };
+        fetchData();
+    }, []);
+
     return (
         <div className='container'>
             <div className='col'>
@@ -21,15 +34,17 @@ function AllCurrencies() {
                 </div>
             </div>
 
-            <CurrencyRow name={"USD"} sellPrice={14} buyPrice={14.3} percentageChange={3} time={'12:34:12'}/>
-            <CurrencyRow name={"USD"} sellPrice={14} buyPrice={14.3} percentageChange={-3} time={'12:34:12'}/>
-            <CurrencyRow name={"USD"} sellPrice={14} buyPrice={14.3} percentageChange={3} time={'12:34:12'}/>
-            <CurrencyRow name={"USD"} sellPrice={14} buyPrice={14.3} percentageChange={-2} time={'12:34:12'}/>
-            <CurrencyRow name={"USD"} sellPrice={14} buyPrice={14.3} percentageChange={3} time={'12:34:12'}/>
-            <CurrencyRow name={"USD"} sellPrice={14} buyPrice={14.3} percentageChange={3} time={'12:34:12'}/>
-            <CurrencyRow name={"USD"} sellPrice={14} buyPrice={14.3} percentageChange={-1} time={'12:34:12'}/>
-            <CurrencyRow name={"USD"} sellPrice={14} buyPrice={14.3} percentageChange={3} time={'12:34:12'}/>
-            <CurrencyRow name={"USD"} sellPrice={14} buyPrice={14.3} percentageChange={3} time={'12:34:12'}/>
+            {currencies.map(currency => (
+                    <CurrencyRow 
+                        key={currency.code}
+                        code={currency.code} 
+                        selling={currency.selling} 
+                        buying={currency.buying}
+                        rate={currency.rate} 
+                        time={currency.time}
+                    />
+                ))
+            }
             </div>
         </div>
       );

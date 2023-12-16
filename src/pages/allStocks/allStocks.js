@@ -44,7 +44,8 @@ function AllStocks() {
                         percentageChange={stock.rate} 
                         time={stock.time}
                     />
-                ))}
+                ))
+            }
             </div>
         </div>
       );
