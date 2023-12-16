@@ -4,7 +4,7 @@ import up from '../../assets/img/up.png'
 import down from '../../assets/img/down.png'
 import stable from '../../assets/img/stable.png'
 
-const StockRow = ({ name, currentPrice, lastPrice, time, percentageChange }) => {
+const StockRow = ({ name, currentPrice, min, max, time, percentageChange }) => {
   const boxClass = percentageChange === 0 ? stable : percentageChange > 0 ? up : down;
 
   return (
@@ -15,11 +15,12 @@ const StockRow = ({ name, currentPrice, lastPrice, time, percentageChange }) => 
                 <div className='change-box-wrapper col-1'>
                     <img class="change-box" src={boxClass}/>
                 </div>
-                <div className="col-3 text" style={{textAlign : 'left' , paddingLeft : 20}}>{name}</div>
+                <div className="col-2 text" style={{textAlign : 'left' , paddingLeft : 20}}>{name}</div>
                 <div className="col-2 text">{currentPrice}</div>
-                <div className="col-2 text">{lastPrice}</div>
+                <div className="col-2 text">{min}</div>
+                <div className="col-2 text">{max}</div>
                 <div className="col-2 text">{time}</div>
-                <div className="col-2 text">{percentageChange}%</div>
+                <div className="col-1 text">{percentageChange}%</div>
                 </div>
             </div>
         </div>
