@@ -30,26 +30,3 @@ const loginUser = async (email, password) => {
 };
 
 export { registerUser, loginUser };
-
-/*
-import axios from 'axios';
-import { useAuth } from './authContext';
-
-function makeApiRequest() {
-  const { token } = useAuth();
-
-  // Include the JWT token in the request headers
-  const config = {
-    headers: {
-      Authorization: `Bearer ${token}`,
-    },
-  };
-
-  axios.get('/api/some-endpoint', config)
-    .then((response) => {
-      // Handle the API response
-    })
-    .catch((error) => {
-      // Handle API errors
-    });
-}*/

@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import './register.css';
-import { Link } from 'react-router-dom';
 import {registerUser} from '../../service/auth';
 
 function Register() {

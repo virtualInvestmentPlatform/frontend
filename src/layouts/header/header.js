@@ -1,12 +1,24 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import './header.css'
 import logo from '../../assets/img/logo.png'
 import { useAuth } from '../../context/authContext';
+import { getUser } from '../../service/user'; 
 
 function Header() {
     const {token , logout} = useAuth();
     const navigate = useNavigate();
+    const [user, setUser] = useState(null);
+
+    useEffect(() => {
+        if(token) {
+            getUser(token).then(response => {
+                if(response) {
+                    setUser(response.data);
+                }
+            });
+        }
+    }, [token]);
 
     const handleLogout = () => {
         logout();
@@ -24,9 +36,9 @@ function Header() {
                     </div>
                     {
                     (token) 
-                    ?
+                    ?   
                     <div className="user-panel text-center">
-                        <span className="name">Harun Eren Özkaya</span>
+                        <span className="name">{user.name} {user.surname}</span>
                         <nav className="user-navigation">
                             <Link to="/settings" className="btn btn-link">Ayarlar</Link> |
                             <button onClick={handleLogout} className="btn btn-link">Çıkış</button>

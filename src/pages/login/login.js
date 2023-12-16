@@ -8,7 +8,7 @@ function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [loginStatus, setLoginStatus] = useState('');
-  const { token, login, logout } = useAuth();
+  const {login} = useAuth();
   const navigate = useNavigate();
 
   const handleLogin = async (e) => {
