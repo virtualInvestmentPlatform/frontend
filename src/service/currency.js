@@ -11,4 +11,13 @@ const getAllCurrencies = async () => {
     }
 };
 
-export { getAllCurrencies };
+const getCurrency = async (code) => {
+    try {
+        const response = await axios.get(CURRENCY_PATH + "/" + code);
+        return response;
+    } catch (error) {
+        return null;
+    }
+};
+
+export { getAllCurrencies , getCurrency};
