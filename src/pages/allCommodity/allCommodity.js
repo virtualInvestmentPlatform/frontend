@@ -9,9 +9,9 @@ function AllCommodity() {
 
     useEffect(() => {
         const fetchData = async () => {
-            const response = await getAllCommodities();
-            if (response && response.data) {
-                setCommodities(response.data);
+            const data = await getAllCommodities();
+            if (data) {
+                setCommodities(data);
             }
         };
         fetchData();

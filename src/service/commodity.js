@@ -4,7 +4,10 @@ import { COMMODITY_PATH } from '../const/paths';
 const getAllCommodities = async () => {
     try {
         const response = await axios.get(COMMODITY_PATH);
-        console.log(response);
+        if (response != null) {
+            const filteredCommodities = response.data.filter(commodity => !commodity.name.includes("/"));
+            return filteredCommodities;
+        }
         return response;
     } catch (error) {
         return null;
