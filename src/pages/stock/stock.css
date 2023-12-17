@@ -25,24 +25,26 @@
 }
 
 .stock-title .stock-name {
-    text-align: right;
     padding-right: 0px;
 }
 
-.stock-title .stock-code {
-    text-align: left;
+.stock-code {
+    justify-content: center;
+    text-align: center;
     font-weight: 100;
     color: gray;
 }
 
 .stock-price .number {
-    text-align: right;
+    width: fit-content;
+    max-width: fit-content;
     padding-right: 0px;
     font-size:xx-large;
 }
 
 .stock-price .indicator {
-    text-align: left;
+    width: fit-content;
+    max-width: fit-content;
     font-size: large;
     font-size:xx-large;
     padding-left: 5px;
