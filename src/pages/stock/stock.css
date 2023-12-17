@@ -25,7 +25,7 @@
 }
 
 .stock-title .stock-name {
-    padding-right: 0px;
+    justify-self: center;
 }
 
 .stock-code {

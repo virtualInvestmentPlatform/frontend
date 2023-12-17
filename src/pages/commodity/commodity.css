@@ -25,24 +25,26 @@
 }
 
 .commodity-title .commodity-name {
-    text-align: right;
-    padding-right: 0px;
+    text-align: center;
 }
 
-.commodity-title .commodity-code {
-    text-align: left;
+.commodity-code {
+    justify-content: center;
+    text-align: center;
     font-weight: 100;
     color: gray;
 }
 
 .commodity-price .number {
-    text-align: right;
+    width: fit-content;
+    max-width: fit-content;
     padding-right: 0px;
     font-size:xx-large;
 }
 
 .commodity-price .indicator {
-    text-align: left;
+    width: fit-content;
+    max-width: fit-content;
     font-size: large;
     font-size:xx-large;
     padding-left: 5px;

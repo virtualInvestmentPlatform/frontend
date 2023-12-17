@@ -11,4 +11,13 @@ const getAllCommodities = async () => {
     }
 };
 
-export { getAllCommodities };
+const getCommodity = async (code) => {
+    try {
+        const response = await axios.get(COMMODITY_PATH + "/" + code);
+        return response;
+    } catch (error) {
+        return null;
+    }
+};
+
+export { getAllCommodities, getCommodity };

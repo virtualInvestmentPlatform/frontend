@@ -33,7 +33,7 @@ function Currency() {
                   </div>
                 <div className='row currency-price'>
                   <span className={"col number " + (currency.rate > 0 ? 'text-success' : 'text-danger')}>
-                      {currency.buying}
+                      {currency.buying} TL
                   </span>
                   <span className={"col indicator " + (currency.rate > 0 ? 'text-success' : 'text-danger')}>
                       {currency.rate > 0 ? '↑' : '↓'}
