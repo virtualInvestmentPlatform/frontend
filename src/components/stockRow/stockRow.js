@@ -16,9 +16,9 @@ const StockRow = ({ name, currentPrice, min, max, time, percentageChange }) => {
                     <img class="change-box" src={boxClass}/>
                 </div>
                 <div className="col-2 text" style={{textAlign : 'left' , paddingLeft : 20}}>{name}</div>
-                <div className="col-2 text">{currentPrice}</div>
-                <div className="col-2 text">{min}</div>
-                <div className="col-2 text">{max}</div>
+                <div className="col-2 text">{currentPrice} TL</div>
+                <div className="col-2 text">{min} TL</div>
+                <div className="col-2 text">{max} TL</div>
                 <div className="col-2 text">{time}</div>
                 <div className="col-1 text">{percentageChange}%</div>
                 </div>

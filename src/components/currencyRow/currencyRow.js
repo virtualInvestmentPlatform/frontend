@@ -16,8 +16,8 @@ const CurrencyRow = ({ code, selling, buying, time, rate }) => {
               <img class="change-box" src={boxClass}/>
             </div>
             <div className="col-3 text" style={{textAlign : 'left' , paddingLeft : 20}}>{code}</div>
-            <div className="col-2 text">{selling}</div>
-            <div className="col-2 text">{buying}</div>
+            <div className="col-2 text">{selling} TL</div>
+            <div className="col-2 text">{buying} TL</div>
             <div className="col-2 text">{time}</div>
             <div className="col-2 text">{rate}%</div>
           </div>
