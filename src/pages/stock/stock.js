@@ -3,13 +3,16 @@ import './stock.css'
 import { useParams } from "react-router-dom";
 import { useAuth } from '../../context/authContext';
 import { getStock } from '../../service/stock';
-import { getUserItemCount } from '../../service/transaction'; 
+import { getUserItemCount , buyTransaction, sellTransaction} from '../../service/transaction'; 
 
 function Stock() {
     const {token} = useAuth();
     const { stockName } = useParams();
     const [stock, setStock] = useState([]);
     const [itemCount, setItemCount] = useState([]);
+    const [buyAmount, setBuyAmount] = useState(0);
+    const [sellAmount, setSellAmount] = useState(0);
+    const [transactionSuccessful, setTransactionSuccessful] = useState(-1);
 
     useEffect(() => {
         const fetchStockData = async () => {
@@ -31,6 +34,30 @@ function Stock() {
         fetchItemCountData();
 
     }, []);
+
+    const handleBuyClick = async () => {
+      const response = await buyTransaction(token, stockName, "STOCK", buyAmount);
+      if (response && response.data) {
+          setTransactionSuccessful(true);
+          setTimeout(() => {
+            window.location.reload();
+        }, 1000); 
+      } else {
+          setTransactionSuccessful(false);
+      }
+    };
+
+    const handleSellClick = async () => {
+      const response = await sellTransaction(token, stockName, "STOCK", sellAmount);
+      if (response && response.data) {
+          setTransactionSuccessful(true);
+          setTimeout(() => {
+            window.location.reload();
+        }, 1000); 
+      } else {
+          setTransactionSuccessful(false);
+      }
+    };
 
     return (
         <div className="container stock-container text-white bg-dark mb-0">
@@ -66,16 +93,27 @@ function Stock() {
               </div>
               <div className='row'>
                 <div className='row buy-section'>
-                  <input className='col-3' type='number' min={0}></input>
+                  <input className='col-3' type='number' min={0} value={buyAmount}
+                                    onChange={(e) => setBuyAmount(Number(e.target.value))}></input>
                   <p className='col-2'>Lot</p>
-                  <btn className='col-4'>Satın Al</btn>
+                  <button className='col-4' onClick={handleBuyClick}>Satın Al</button>
                 </div>
                 <div className='row sell-section'>
-                  <input className='col-3' type='number' min={0}></input>
+                <input className='col-3' type='number' min={0} value={sellAmount}
+                                    onChange={(e) => setSellAmount(Number(e.target.value))}></input>
                   <p className='col-2'>Lot</p>
-                  <btn className='col-4'>Sat</btn>
+                  <button className='col-4' onClick={handleSellClick}>Sat</button>
                 </div>
               </div>
+              <br/>
+              {(transactionSuccessful === true) ?
+                <div className="row alert alert-success" role="alert">
+                    İşlem başarıyla tamamlandı!
+                </div>
+              : (transactionSuccessful === false) ? <div className="row alert alert-danger" role="alert">
+                    İşlem sırasında bir hata meydana geldi!
+                </div> : <div></div>
+              }
             </div> : <div></div> } 
             
           </div>
