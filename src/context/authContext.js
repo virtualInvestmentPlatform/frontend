@@ -13,7 +13,7 @@ export function AuthProvider({ children }) {
 
 
   useEffect(() => {
-    if (token) {
+    if (token != null) {
       sessionStorage.setItem('userToken', token);
     } else {
       sessionStorage.removeItem('userToken');

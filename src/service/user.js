@@ -8,7 +8,8 @@ const getUser = async (token) => {
     },
   };
   try {
-    const response = await axios.get(USER_PATH, config);
+    const request = axios.get(USER_PATH, config);
+    const response = await request;
     return response;
   } catch (error) {
     return null;

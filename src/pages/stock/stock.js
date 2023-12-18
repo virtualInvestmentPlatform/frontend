@@ -2,21 +2,34 @@ import React, { useState, useEffect } from 'react';
 import './stock.css'
 import { useParams } from "react-router-dom";
 import { useAuth } from '../../context/authContext';
-import { getStock } from '../../service/stock'; 
+import { getStock } from '../../service/stock';
+import { getUserItemCount } from '../../service/transaction'; 
 
 function Stock() {
     const {token} = useAuth();
     const { stockName } = useParams();
     const [stock, setStock] = useState([]);
+    const [itemCount, setItemCount] = useState([]);
 
     useEffect(() => {
-        const fetchData = async () => {
+        const fetchStockData = async () => {
             const response = await (getStock(stockName));
-            if (response && response.data) {
+            if (response && response.data ) {
                 setStock(response.data);
             }
         };
-        fetchData();
+
+        const fetchItemCountData = async () => {
+          const response = await (getUserItemCount(token,stockName,"STOCK"));
+          if (response) {
+              setItemCount(response.data);
+          }
+        };
+
+      fetchStockData();
+      if (token)
+        fetchItemCountData();
+
     }, []);
 
     return (
@@ -49,7 +62,7 @@ function Stock() {
             </p>
             {(token) ? <div className='col-4'>
               <div className='row own-title align-items-center'>
-                <p>Sahiplik : {'0'} Lot</p>
+                <p>Sahiplik : {itemCount} Lot</p>
               </div>
               <div className='row'>
                 <div className='row buy-section'>

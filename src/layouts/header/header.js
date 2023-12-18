@@ -15,10 +15,7 @@ function Header() {
             getUser(token).then(response => {
                 if(response) {
                     setUser(response.data);
-                    console.log(response.data);
-                    console.log(response);
                 }
-                console.log(response);
             });
         }
     }, [token]);
@@ -86,7 +83,3 @@ function Header() {
 }
 
 export default Header;
-
-/*
-<span className="name">{user.name} {user.surname}</span>
-                        <span className="balance">{user.balance} TL</span>*/
