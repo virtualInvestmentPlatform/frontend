@@ -22,7 +22,7 @@ function Currency() {
     return (
         <div className="container currency-container text-white bg-dark mb-0">
           <div className="card-body row">
-            <h5 className={"card-title left " + (token ? "col-4" : "col-6")}>
+            <h5 className={"card-title left " + (token ? "col-4" : "col-7")}>
                 <div className='row currency-title'>
                   <div className={"col currency-name"}>
                       {currency.name}
@@ -40,7 +40,7 @@ function Currency() {
                   </span>
                 </div>
             </h5>
-            <p className={"card-text right " + (token ? "col-4" : "col-6")}>
+            <p className={"card-text right " + (token ? "col-4" : "col-5")}>
               Değişim: {currency.rate} %<br />
               Satış: {currency.selling} TL<br />
               Alış: {currency.buying} TL<br />

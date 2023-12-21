@@ -107,10 +107,10 @@ function Stock() {
               </div>
               <br/>
               {(transactionSuccessful === true) ?
-                <div className="row alert alert-success" role="alert">
+                <div className="row stock-alert alert alert-success" role="alert">
                     İşlem başarıyla tamamlandı!
                 </div>
-              : (transactionSuccessful === false) ? <div className="row alert alert-danger" role="alert">
+              : (transactionSuccessful === false) ? <div className="row stock-alert alert alert-danger" role="alert">
                     İşlem sırasında bir hata meydana geldi!
                 </div> : <div></div>
               }

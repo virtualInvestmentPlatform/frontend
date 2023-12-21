@@ -22,7 +22,7 @@ function Commodity() {
     return (
         <div className="container commodity-container text-white bg-dark mb-0">
           <div className="card-body row">
-            <h5 className={"card-title left " + (token ? "col-4" : "col-6")}>
+            <h5 className={"card-title left " + (token ? "col-4" : "col-7")}>
                 <div className='row commodity-title'>
                   <div className={"col commodity-name"}>
                       {commodity.text}
@@ -40,7 +40,7 @@ function Commodity() {
                   </span>
                 </div>
             </h5>
-            <p className={"card-text right " + (token ? "col-4" : "col-6")}>
+            <p className={"card-text right " + (token ? "col-4" : "col-5")}>
               Değişim: {commodity.rate} %<br />
               Alış: {commodity.buying} TL<br />
               Satış: {commodity.selling} TL<br />

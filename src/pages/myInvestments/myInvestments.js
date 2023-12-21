@@ -17,11 +17,12 @@ function MyInvestments() {
                                 <div className="card-body">
                                     <div className="row">
                                         <div className="col-1"></div>
-                                        <div className="col-3" style={{textAlign : 'left' , paddingLeft : 20} }>Hisse</div>
+                                        <div className="col-2" style={{textAlign : 'left' , paddingLeft : 20} }>Hisse</div>
                                         <div className="col-2">Güncel Fiyat</div>
-                                        <div className="col-2">Son Kapanış</div>
                                         <div className="col-2">Son Güncelleme</div>
-                                        <div className="col-2">Değişim</div>
+                                        <div className="col-2">Toplam Kar/Zarar</div>
+                                        <div className="col-2">TL Karşılığı</div>
+                                        <div className="col-1">Değişim</div>
                                     </div>
                             </div>
                         </div>

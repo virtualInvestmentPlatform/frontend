@@ -20,6 +20,7 @@
     background-color: rgba(74, 85, 113, 0.14);
 }
 
-.investment-title {
+.investment-title h4 {
     color: white;
+    font-weight: 100;
 }
