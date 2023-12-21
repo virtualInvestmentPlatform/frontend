@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { TRANSACTION_PATH, GET_ITEM_COUNT_PATH } from '../const/paths';
+import { TRANSACTION_PATH, GET_ITEM_COUNT_PATH, INVESTMENT_PATH } from '../const/paths';
 
 const getUserItemCount = async (token, investmentCode, investmentType) => {
     const config = {
@@ -66,5 +66,23 @@ const sellTransaction = async (token, investmentCode, investmentType, amount) =>
     }
 };
 
+const getMyInvestments = async (token) => {
+    const config = {
+        headers: {
+          Authorization: `Bearer <${token}>`,
+        },
+    };
 
-export { getUserItemCount , buyTransaction, sellTransaction};
+    try {
+        const response = await axios.get(INVESTMENT_PATH,{
+            headers: config.headers,
+        });
+        console.log(response);
+        return response;
+    } catch (error) {
+        return error;
+    }
+};
+
+
+export { getUserItemCount , buyTransaction, sellTransaction, getMyInvestments};
