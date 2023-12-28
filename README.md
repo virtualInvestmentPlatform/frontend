@@ -28,8 +28,8 @@ The Virtual Investment Platform is an easy-to-use and straightforward investment
 
 ## Navigation
 
-Backend :<br/>
-Frontend :<br/>
+Backend : https://github.com/virtualInvestmentPlatform/backend <br/>
+Frontend : this <br/>
 <br>
 
 ## Screenshots
